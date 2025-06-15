@@ -2,7 +2,9 @@ from flask import Flask, render_template, request
 import google.generativeai as genai
 
 # Gemini API key (get from: https://makersuite.google.com/app/apikey)
-genai.configure(api_key="AIzaSyB8B_rxhY-V3RV0jDr6LlDNEgMrWIXjBkE")  # ← yahan apna API key daalna
+# genai.configure(api_key="AIzaSyB8B_rxhY-V3RV0jDr6LlDNEgMrWIXjBkE")  # ← yahan apna API key daalna
+import os
+genai.configure(api_key=os.environ["GOOGLE_API_KEY"])
 
 app = Flask(__name__)
 
